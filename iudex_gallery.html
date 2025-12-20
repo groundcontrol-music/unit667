@@ -1,0 +1,129 @@
+
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IUDEX UMBRAE | SCRIPTURES</title>
+    <style>
+        body {
+            background-color: #050300;
+            /* Das Bild mit den Rissen als Hintergrund */
+            background-image: url('img/background_gold.jpg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            color: #e6c270;
+            font-family: 'Georgia', serif;
+            margin: 0; padding: 20px;
+            text-align: center;
+        }
+
+        /* Starkes Abdunkeln, damit die Risse nur subtil leuchten */
+        body::before {
+            content: "";
+            position: fixed; top: 0; left: 0; right: 0; bottom: 0;
+            background: rgba(10, 5, 0, 0.85);
+            z-index: -1;
+        }
+
+        h1 {
+            border-bottom: 1px solid #5c4827;
+            display: inline-block; padding-bottom: 10px; margin-bottom: 40px;
+            text-transform: uppercase; letter-spacing: 5px;
+            text-shadow: 0 0 10px #000;
+        }
+
+        /* GALERIE GRID */
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+            gap: 20px;
+            max-width: 900px; margin: 0 auto;
+        }
+
+        .gallery-item {
+            position: relative; overflow: hidden;
+            aspect-ratio: 1 / 1;
+            border: 1px solid #3d301a;
+            transition: 0.4s; cursor: pointer;
+            filter: sepia(40%) grayscale(20%); /* Antiker Look */
+        }
+
+        .gallery-item:hover {
+            border-color: #e6c270;
+            transform: scale(1.03);
+            filter: sepia(0%) grayscale(0%);
+            box-shadow: 0 0 20px rgba(197, 160, 89, 0.3);
+        }
+
+        .gallery-item img {
+            width: 100%; height: 100%; object-fit: cover;
+        }
+
+        /* LIGHTBOX */
+        .lightbox {
+            display: none; position: fixed; z-index: 999;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(5, 3, 0, 0.95);
+            justify-content: center; align-items: center;
+        }
+
+        .lightbox img {
+            max-width: 90%; max-height: 90%;
+            border: 2px solid #8c734b;
+            box-shadow: 0 0 50px rgba(197, 160, 89, 0.2);
+        }
+
+        .close-btn {
+            position: absolute; top: 20px; right: 30px;
+            font-size: 40px; color: #8c734b; cursor: pointer;
+        }
+
+        .back-btn {
+            display: inline-block; margin-top: 50px; padding: 10px 20px;
+            border: 1px solid #3d301a; color: #888; text-decoration: none;
+            font-family: 'Courier New', monospace; font-size: 0.8rem;
+            background: rgba(0,0,0,0.8); transition: 0.3s;
+        }
+        .back-btn:hover { border-color: #c5a059; color: #c5a059; }
+
+    </style>
+</head>
+<body>
+
+    <h1>Visual Scriptures</h1>
+
+    <div class="gallery-grid">
+        <div class="gallery-item" onclick="openLightbox('img/ludex_art1.jpg')">
+            <img src="img/ludex_art1.jpg" alt="The Wanderer">
+        </div>
+        
+        <div class="gallery-item" onclick="openLightbox('img/background_gold.jpg')">
+            <img src="img/background_gold.jpg" alt="He is it">
+        </div>
+
+        <div class="gallery-item" onclick="openLightbox('img/ludex_art2.jpg')">
+            <img src="img/ludex_art.2.jpg" alt="Platzhalter">
+        </div>
+    </div>
+
+    <a href="iudex.html" class="back-btn">< RETURN TO JUDGMENT</a>
+
+    <div class="lightbox" id="lightbox" onclick="closeLightbox()">
+        <span class="close-btn">×</span>
+        <img id="lightbox-img" src="">
+    </div>
+
+    <script>
+        function openLightbox(src) {
+            document.getElementById('lightbox-img').src = src;
+            document.getElementById('lightbox').style.display = 'flex';
+        }
+        function closeLightbox() {
+            document.getElementById('lightbox').style.display = 'none';
+        }
+    </script>
+
+</body>
+</html>

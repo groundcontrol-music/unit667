@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UNIT 667 | GLOBAL INTERFACE</title>
+    <style>
+        /* CORE DESIGN */
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Courier New', Courier, monospace;
+            color: #e0f7fa;
+            background-color: #000;
+            background-image: url('img/background_core.jpg');
+            background-size: cover;
+            background-position: center center;
+            background-attachment: fixed;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        body::before {
+            content: "";
+            position: fixed; top: 0; left: 0; right: 0; bottom: 0;
+            background: rgba(0, 0, 0, 0.6);
+            z-index: -1;
+        }
+
+        header {
+            margin-top: 40px;
+            text-align: center;
+            border-bottom: 2px solid #00bcd4;
+            padding-bottom: 20px;
+            width: 90%;
+            max-width: 800px;
+        }
+
+        h1 {
+            margin: 0;
+            font-size: 3rem;
+            letter-spacing: 8px;
+            text-transform: uppercase;
+            text-shadow: 0 0 10px rgba(0, 188, 212, 0.7);
+        }
+
+        /* CONTAINER BOXEN */
+        .module-box {
+            background: rgba(10, 15, 20, 0.85);
+            border: 1px solid #333;
+            border-left: 3px solid #00bcd4;
+            padding: 20px;
+            margin: 20px 0;
+            width: 90%;
+            max-width: 600px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.8);
+            backdrop-filter: blur(4px);
+        }
+
+        .news-header {
+            font-weight: bold;
+            color: #00bcd4;
+            border-bottom: 1px solid #444;
+            padding-bottom: 5px;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+        }
+
+        /* BUTTON DESIGN (Ersetzt Player) */
+        .action-btn {
+            display: block;
+            width: 100%;
+            padding: 15px 0;
+            margin-bottom: 10px;
+            text-align: center;
+            text-decoration: none;
+            color: #fff;
+            background: rgba(0, 188, 212, 0.1);
+            border: 1px solid #00bcd4;
+            text-transform: uppercase;
+            font-weight: bold;
+            letter-spacing: 2px;
+            transition: 0.3s;
+            box-sizing: border-box; /* Wichtig damit Padding nicht die Breite sprengt */
+        }
+
+        .action-btn:hover {
+            background: #00bcd4;
+            color: #000;
+            box-shadow: 0 0 15px #00bcd4;
+        }
+
+        .social-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+        }
+
+        .small-btn {
+            display: block;
+            padding: 10px;
+            text-align: center;
+            text-decoration: none;
+            color: #aaa;
+            border: 1px solid #444;
+            background: rgba(0,0,0,0.5);
+            transition: 0.3s;
+            font-size: 0.8rem;
+        }
+        
+        .small-btn:hover {
+            border-color: #fff;
+            color: #fff;
+            background: #222;
+        }
+
+        /* NAVIGATION DOCK */
+        .nav-dock {
+            margin-top: 20px;
+            margin-bottom: 50px;
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+        }
+
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>UNIT 667</h1>
+        <p style="letter-spacing: 3px; font-size: 0.9rem;">OPERATING SYSTEM ONLINE</p>
+    </header>
+
+    <div class="module-box">
+        <div class="news-header">/// SYSTEM STATUS / NEWS</div>
+        <p>
+            <strong>10.01.2026:</strong>Track: Blind Leaders<br>
+            <br>
+            <strong>30.01.2026:</strong>Single Sacred Geometry I.</br>
+<strong>27.02.2026:</strong>Single Sacred Geometry II</br>
+<strong>30.03.2026:</strong>Single Sacred Geometry III
+        </p>
+    </div>
+
+    <div class="module-box">
+        <div class="news-header">/// TARGET: MUSIC DATABASE</div>
+        
+        <a href="[LINK_ZU_DEINEM_SPOTIFY_PROFIL]" target="_blank" class="action-btn">
+            > LISTEN ON SPOTIFY
+        </a>
+
+        <a href="[LINK_ZU_YOUTUBE_KANAL]" target="_blank" class="action-btn" style="border-color: #ff0000; background: rgba(255,0,0,0.1); color: #ffcccc;">
+            > WATCH ON YOUTUBE
+        </a>
+    </div>
+
+    <div class="module-box">
+        <div class="news-header">/// COMM CHANNELS</div>
+        <div class="social-grid">
+            <a href="[LINK_TIKTOK]" target="_blank" class="small-btn">TIKTOK</a>
+            <a href="[LINK_INSTA]" target="_blank" class="small-btn">INSTAGRAM</a>
+            <a href="#" class="small-btn" style="opacity: 0.5; cursor: default;">ERZIEHER MATZE</a> 
+        </div>
+    </div>
+
+    <div class="nav-dock">
+        <a href="gallery.html" class="small-btn" style="border-color: #00bcd4; color: #00bcd4;">> ARCHIVES (IMG)</a>
+        <a href="iudex.html" class="small-btn" style="border-color: #d4af37; color: #d4af37;">> IUDEX UMBRAE</a>
+    </div>
+
+    <footer style="margin-bottom: 20px; font-size: 0.7rem; color: #555;">
+        <a href="impressum.html" style="color: #555; text-decoration: none;">Impressum & Datenschutz</a>
+    </footer>
+
+</body>
+</html>

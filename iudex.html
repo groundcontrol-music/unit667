@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LUDEX UMBRAE | The Judgment</title>
+    <style>
+        /* GRUNDSTIMMUNG: Düster, Gold, Alt */
+        body {
+            background-color: #0f0b05;
+            color: #c5a059; /* Mattes Gold */
+            font-family: 'Georgia', 'Times New Roman', serif;
+            margin: 0; padding: 0;
+            line-height: 1.6;
+            text-align: center;
+        }
+
+        body::before {
+            content: "";
+            position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+            background: radial-gradient(circle at center, #2a1f10 0%, #000000 90%);
+            z-index: -1;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        /* HERO IMAGE */
+        .ludex-art {
+            width: 100%; max-width: 500px; height: auto;
+            border: 1px solid #5c4827;
+            box-shadow: 0 0 30px rgba(197, 160, 89, 0.1);
+            margin-bottom: 40px;
+            filter: sepia(20%) contrast(110%);
+        }
+
+        h1 {
+            font-size: 2.5rem; letter-spacing: 6px; color: #e6c270;
+            margin-bottom: 10px; text-shadow: 2px 2px 4px #000;
+            border-bottom: 1px solid #5c4827; display: inline-block; padding-bottom: 10px;
+        }
+
+        h2 { font-size: 1.2rem; color: #8c734b; text-transform: uppercase; letter-spacing: 3px; margin-top: 0; }
+
+        .prophecy-box {
+            background-color: rgba(20, 15, 5, 0.8);
+            border: 1px solid #3d301a;
+            padding: 30px; margin: 40px 0;
+            position: relative;
+        }
+        
+        .prophecy-box::after {
+            content: "✦"; position: absolute; bottom: -15px; left: 50%;
+            transform: translateX(-50%); color: #5c4827; font-size: 20px;
+            background-color: #0f0b05; padding: 0 10px;
+        }
+
+        /* BUTTONS (Gold Style) */
+        .gold-btn {
+            display: block; width: 100%; padding: 15px 0; margin-bottom: 15px;
+            text-align: center; text-decoration: none;
+            color: #e6c270; background: rgba(197, 160, 89, 0.1);
+            border: 1px solid #8c734b;
+            text-transform: uppercase; letter-spacing: 2px;
+            transition: 0.3s; font-family: 'Courier New', monospace; font-size: 0.9rem;
+            box-sizing: border-box;
+        }
+
+        .gold-btn:hover {
+            background: #8c734b; color: #000;
+            box-shadow: 0 0 20px rgba(197, 160, 89, 0.4); border-color: #e6c270;
+        }
+
+        /* NAVIGATION DOCK */
+        .nav-dock {
+            margin-top: 50px; display: flex; gap: 20px; justify-content: center;
+        }
+
+        .nav-link {
+            color: #666; text-decoration: none; border-bottom: 1px dashed #444; padding-bottom: 2px;
+            font-family: 'Courier New', monospace; font-size: 0.8rem; transition: 0.3s;
+        }
+        .nav-link:hover { color: #c5a059; border-color: #c5a059; }
+
+        footer { margin-top: 80px; font-size: 0.8rem; color: #444; }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <img src="img/ludex_art.jpg" alt="Ludex Umbrae" class="ludex-art">
+
+      
+        <h2>Richter der Schatten</h2>
+
+        <div class="prophecy-box">
+            <p>
+                "Wir liefen blind durch goldene Hallen, <br>
+                geführt von jenen, die keine Augen hatten."
+            </p>
+        </div>
+
+        <div class="prophecy-box">
+            <p style="color: #e6c270; font-weight: bold; margin-bottom: 20px;">
+                // Sounds of Shadow (MUSIC)
+            </p>
+            <a href="https://open.spotify.com/intl-de/artist/29BnmWh2xAOH5fE3r9bEoD" target="_blank" class="gold-btn">
+                ✦ OPEN ON SPOTIFY
+            </a>
+            <a href="https://www.youtube.com/@LudexUmbrae" target="_blank" class="gold-btn" style="border-color: #555; color: #999;">
+                ▷ WATCH ON YOUTUBE
+            </a>
+        </div>
+
+        <div class="nav-dock">
+            <a href="iudex_gallery.html" class="gold-btn" style="width: auto; padding-left: 30px; padding-right: 30px;">
+                VIEW VISUAL SCRIPTURES (Bilder)
+            </a>
+        </div>
+
+        <a href="index.html" class="nav-link" style="margin-top: 30px; display: inline-block;">
+            < RETURN TO UNIT 667 CORE
+        </a>
+
+        <footer>
+            &copy; 2025 Iudex Umbrae. <br>
+            <a href="impressum.html" style="color: #444; text-decoration: none;">Impressum</a>
+        </footer>
+    </div>
+
+</body>
+</html>
