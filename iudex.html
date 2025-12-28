@@ -45,6 +45,7 @@
 
         h2 { font-size: 1.2rem; color: #8c734b; text-transform: uppercase; letter-spacing: 3px; margin-top: 0; }
 
+        /* Standard Prophecy Box für kurze Zitate/Links */
         .prophecy-box {
             background-color: rgba(20, 15, 5, 0.8);
             border: 1px solid #3d301a;
@@ -57,6 +58,50 @@
             transform: translateX(-50%); color: #5c4827; font-size: 20px;
             background-color: #0f0b05; padding: 0 10px;
         }
+
+        /* NEU: Bio Box - Spezieller Stil für längeren Text */
+        .bio-box {
+            background-color: rgba(20, 15, 5, 0.9);
+            border: 1px solid #5c4827;
+            padding: 40px 20px; /* Etwas weniger Padding seitlich für Mobile */
+            margin: 50px 0;
+            text-align: left; 
+            box-shadow: inset 0 0 50px rgba(0,0,0,0.8);
+        }
+
+        @media (min-width: 600px) {
+             .bio-box { padding: 40px; } /* Mehr Padding auf größeren Screens */
+        }
+        
+        .bio-box h3 {
+            color: #e6c270;
+            font-family: 'Courier New', monospace;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            border-bottom: 1px dashed #3d301a;
+            padding-bottom: 10px;
+            margin-top: 30px;
+        }
+
+        .bio-box strong {
+            color: #e6c270;
+        }
+
+        .bio-quote {
+            font-style: italic;
+            margin: 20px 20px;
+            padding-left: 20px;
+            border-left: 2px solid #8c734b;
+            color: #a68a5a;
+        }
+
+        /* Trenner für die Sprachen */
+        .bio-separator {
+            border: 0; height: 1px;
+            background: linear-gradient(to right, rgba(92, 72, 39, 0), rgba(92, 72, 39, 1), rgba(92, 72, 39, 0));
+            margin: 40px 0;
+        }
+
 
         /* BUTTONS (Gold Style) */
         .gold-btn {
@@ -94,6 +139,7 @@
         <img src="img/ludex_art.jpg" alt="Ludex Umbrae" class="ludex-art">
 
       
+        <h1>LUDEX UMBRAE</h1>
         <h2>Richter der Schatten</h2>
 
         <div class="prophecy-box">
@@ -103,6 +149,68 @@
             </p>
         </div>
 
+        <div class="bio-box">
+            <div style="text-align: center; margin-bottom: 30px;">
+                <h2 style="margin-bottom: 5px; color: #e6c270;">ENTITY: SHADOW JUDGE</h2>
+                <span style="font-family: 'Courier New', monospace; color: #8c734b; font-size: 0.9rem;">> Affiliation: GroundC / The Core Project <</span>
+            </div>
+
+            <h3>[DE] Der Hüter der Tiefe</h3>
+            <p>
+                <strong>Identität:</strong> Unbekannt. <br>
+                <strong>Existenz:</strong> Bestätigt. <br>
+                <strong>Autorität:</strong> Absolut.
+            </p>
+            <p>
+                Ludex Umbrae ist nicht zwingend eine Person; es ist eine Funktion, eine Notwendigkeit, geboren aus den Tiefen des <strong>GroundC Core Projects</strong>. In einer Initiative, die sich mit den fundamentalen Aspekten unserer Realität befasst, reicht herkömmliche Moral nicht aus.
+            </p>
+            <p>
+                Wo das Licht der Oberfläche nicht hinreicht, beginnt die Zuständigkeit des Schattenrichters. Er ist der stille Beobachter der Operationen im "Core". Er ist der Mechanismus der Rechenschaftspflicht in einer Welt voller Geheimnisse. Ludex Umbrae wägt die Taten ab, die im Verborgenen geschehen, und fällt Urteile basierend auf reiner Notwendigkeit.
+            </p>
+            <div class="bio-quote">
+                "Die Wahrheit sucht nicht das Licht. Sie wartet in der Tiefe, bis sie gerufen wird. Ich bin dieser Ruf."
+            </div>
+
+            <hr class="bio-separator">
+
+            <h3>[EN] Guardian of the Deep</h3>
+            <p>
+                <strong>Identity:</strong> Unknown. <br>
+                <strong>Existence:</strong> Confirmed. <br>
+                <strong>Authority:</strong> Absolute.
+            </p>
+            <p>
+                Ludex Umbrae is not necessarily a person; it is a function, a necessity born from the depths of the <strong>GroundC Core Project</strong>. In an initiative dealing with the fundamental aspects of our reality, conventional morality is insufficient.
+            </p>
+            <p>
+                Where surface light cannot reach, the jurisdiction of the Shadow Judge begins. They are the silent observer of operations within "The Core." They are the mechanism of accountability in a world defined by secrets. Ludex Umbrae weighs deeds committed in obscurity and delivers judgments based on pure necessity.
+            </p>
+            <div class="bio-quote">
+                "Truth does not seek the light. It waits in the deep until it is summoned. I am that summons."
+            </div>
+        </div>
+        <div style="text-align: center; margin-top: 50px; margin-bottom: 50px;">
+            <a href="https://distrokid.com/hyperfollow/ludexumbrae/echoes-of-life" target="_blank" style="
+                background-color: transparent;
+                color: #e6c270; /* Gold statt Cyan */
+                border: 2px solid #e6c270; /* Gold Border */
+                padding: 15px 20px; /* Angepasstes Padding für bessere Kontrolle */
+                width: 80%; /* Breite responsive machen */
+                max-width: 500px; /* Maximale Breite begrenzen */
+                display: inline-block; /* Wichtig damit Width greift */
+                font-family: 'Share Tech Mono', 'Courier New', monospace; /* Fallback Font hinzugefügt */
+                font-size: 1.2rem;
+                text-decoration: none;
+                text-transform: uppercase;
+                letter-spacing: 3px;
+                box-shadow: 0 0 15px rgba(197, 160, 89, 0.3); /* Goldener Glow */
+                transition: all 0.3s ease;
+                box-sizing: border-box; /* Verhindert dass Padding die Breite sprengt */
+            " onmouseover="this.style.backgroundColor='#e6c270'; this.style.color='black'; this.style.boxShadow='0 0 30px rgba(197, 160, 89, 0.6)';"
+               onmouseout="this.style.backgroundColor='transparent'; this.style.color='#e6c270'; this.style.boxShadow='0 0 15px rgba(197, 160, 89, 0.3)';">
+                > Releases <
+            </a>
+        </div>
         <div class="prophecy-box">
             <p style="color: #e6c270; font-weight: bold; margin-bottom: 20px;">
                 // Sounds of Shadow (MUSIC)
@@ -117,7 +225,7 @@
 
         <div class="nav-dock">
             <a href="iudex_gallery.html" class="gold-btn" style="width: auto; padding-left: 30px; padding-right: 30px;">
-                VIEW VISUAL SCRIPTURES (Bilder)
+                GALLERY
             </a>
         </div>
 
@@ -126,7 +234,7 @@
         </a>
 
         <footer>
-            &copy; 2025 Iudex Umbrae. <br>
+            © 2025 Ludex Umbrae. <br>
             <a href="impressum.html" style="color: #444; text-decoration: none;">Impressum</a>
         </footer>
     </div>
