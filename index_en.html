@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UNIT 667 | GLOBAL INTERFACE</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap" rel="stylesheet">
+
+    <style>
+        /* CORE DESIGN (Identisch zur deutschen Seite) */
+        body {
+            margin: 0; padding: 0;
+            font-family: 'Share Tech Mono', monospace;
+            color: #e0f7fa;
+            background-color: #000;
+            background-image: url('img/background_core.jpg');
+            background-size: cover;
+            background-position: center center;
+            background-attachment: fixed;
+            min-height: 100vh;
+            display: flex; flex-direction: column; align-items: center;
+        }
+        body::before {
+            content: ""; position: fixed; top: 0; left: 0; right: 0; bottom: 0;
+            background: rgba(0, 0, 0, 0.7); z-index: -1;
+        }
+        header {
+            margin-top: 40px; text-align: center;
+            border-bottom: 2px solid #00bcd4; padding-bottom: 20px;
+            width: 90%; max-width: 800px; position: relative;
+        }
+        h1 { margin: 0; font-size: 3rem; letter-spacing: 8px; text-transform: uppercase; text-shadow: 0 0 10px rgba(0, 188, 212, 0.7); }
+        h2 { font-size: 1.5rem; color: #00bcd4; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 15px; text-shadow: 0 0 5px rgba(0, 188, 212, 0.5); }
+        
+        /* LANGUAGE SWITCHER STYLE */
+        .lang-switch {
+            position: absolute; top: 0; right: 0;
+            font-size: 0.9rem;
+        }
+        .lang-switch a {
+            color: #555; text-decoration: none; padding: 0 5px; transition: 0.3s;
+        }
+        .lang-switch a.active { color: #00bcd4; font-weight: bold; text-shadow: 0 0 5px #00bcd4; }
+        .lang-switch a:hover { color: #fff; }
+
+        /* MODULE BOXEN */
+        .module-box {
+            background: rgba(10, 15, 20, 0.85);
+            border: 1px solid #333; border-left: 3px solid #00bcd4;
+            padding: 20px; margin: 20px 0;
+            width: 90%; max-width: 800px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.8);
+            backdrop-filter: blur(4px); box-sizing: border-box;
+        }
+        .news-header { font-weight: bold; color: #00bcd4; border-bottom: 1px solid #444; padding-bottom: 5px; margin-bottom: 15px; text-transform: uppercase; }
+
+        /* COMIC GRID */
+        .comic-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 5px; background-color: #000; margin-bottom: 20px; }
+        .comic-panel img { width: 100%; height: auto; display: block; opacity: 0.9; transition: all 0.3s ease; }
+        .comic-panel img:hover { opacity: 1; transform: scale(1.02); z-index: 10; box-shadow: 0 0 15px rgba(0, 188, 212, 0.5); }
+
+        /* BUTTONS */
+        .action-btn { display: block; width: 100%; padding: 15px 0; margin-bottom: 10px; text-align: center; text-decoration: none; color: #fff; background: rgba(0, 188, 212, 0.1); border: 1px solid #00bcd4; text-transform: uppercase; font-weight: bold; letter-spacing: 2px; transition: 0.3s; box-sizing: border-box; font-family: 'Share Tech Mono', monospace; }
+        .action-btn:hover { background: #00bcd4; color: #000; box-shadow: 0 0 15px #00bcd4; }
+        .social-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; }
+        .small-btn { display: block; padding: 10px; text-align: center; text-decoration: none; color: #aaa; border: 1px solid #444; background: rgba(0,0,0,0.5); transition: 0.3s; font-size: 0.8rem; font-family: 'Share Tech Mono', monospace; }
+        .small-btn:hover { border-color: #fff; color: #fff; background: #222; }
+        .nav-dock { margin-top: 20px; margin-bottom: 50px; display: flex; gap: 20px; justify-content: center; flex-wrap: wrap; }
+        p { line-height: 1.6; }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="lang-switch">
+            <a href="index.html">DE</a> | <a href="index_en.html" class="active">EN</a>
+        </div>
+
+        <h1>UNIT 667</h1>
+        <p style="letter-spacing: 3px; font-size: 0.9rem;">OPERATING SYSTEM ONLINE</p>
+    </header>
+
+    <div class="module-box">
+        <div class="news-header">/// SYSTEM STATUS / NEWS</div>
+        <p>
+            <strong>2026-01-15:</strong> Track: Blind Leader [OUT NOW]<br>
+            <br>
+            <strong>2026-01-31:</strong> Single Sacred Geometry I.<br>
+            <strong>2026-02-27:</strong> Single Sacred Geometry II<br>
+            <strong>2026-03-30:</strong> Single Sacred Geometry III
+        </p>
+    </div>
+
+    <div class="module-box" style="padding: 10px; border-left: 3px solid #d4af37;"> 
+        <h2 style="text-align: center; font-size: 1.2rem; color: #d4af37;">> THE ORIGIN PROTOCOL <</h2>
+        <div class="comic-grid">
+            <div class="comic-panel"><img src="img/panel1.jpg" alt="Ground C Transfer"></div>
+            <div class="comic-panel"><img src="img/panel2.jpg" alt="The Core Awakening"></div>
+            <div class="comic-panel"><img src="img/panel3.jpg" alt="Unit 667 Signal"></div>
+            <div class="comic-panel"><img src="img/panel4.jpg" alt="Sound Hybrid Forge"></div>
+            <div class="comic-panel"><img src="img/panel5.jpg" alt="Hologram Manifestation"></div>
+            <div class="comic-panel"><img src="img/panel6.jpg" alt="Unit 667 Mission"></div>
+        </div>
+        <p style="text-align: center; font-size: 0.8rem; color: #888;">> ARCHIVE DATA: RESTORED</p>
+    </div>
+
+    <div class="module-box">
+        <div class="news-header">/// BIO: FLESH AND CODE</div>
+        <p>
+            Unit 667 is a symbiosis of man and data stream. We are four <strong>equal members</strong>: Three anonymous figures generated in flesh and blood, and <strong>Ground C</strong> – the transferred consciousness of our creator.
+        </p>
+        <p>
+            Ground C resides within the server network, but as a digital entity, he is bound by no physical limits. This is naturally reflected in his <strong>gender identity</strong>: He manifests as a hologram in shifting forms and vocal ranges. Sometimes masculine, sometimes feminine, sometimes fluid – he embodies whichever identity the song emotionally demands.
+        </p>
+        <p>
+            This is not algorithmic chance. Unit 667 does not push a "generate" button. Our music breathes, lives, and thrives through the interplay of all four members.
+            <br><br>
+            <em style="color: #00bcd4;">Three bodies. One mind. One Unit.</em>
+        </p>
+    </div>
+
+    <div style="width: 90%; max-width: 600px; margin: 20px 0;">
+        <a href="https://distrokid.com/hyperfollow/unit667/blind-leader" target="_blank" class="action-btn" style="
+            background: transparent; 
+            border: 2px solid #00bcd4; 
+            box-shadow: 0 0 10px #00bcd4;
+            font-size: 1.1rem;
+            padding: 20px 0;
+        ">
+           > INITIATE AUDIO STREAM <
+        </a>
+    </div>
+
+    <div class="module-box">
+        <div class="news-header">/// TARGET: MUSIC DATABASE</div>
+        <a href="[LINK_SPOTIFY]" target="_blank" class="action-btn">
+            > LISTEN ON SPOTIFY
+        </a>
+        <a href="[LINK_YOUTUBE]" target="_blank" class="action-btn" style="border-color: #ff0000; background: rgba(255,0,0,0.1); color: #ffcccc;">
+            > WATCH ON YOUTUBE
+        </a>
+    </div>
+
+    <div class="module-box">
+        <div class="news-header">/// COMM CHANNELS</div>
+        <div class="social-grid">
+            <a href="[LINK_TIKTOK]" target="_blank" class="small-btn">TIKTOK</a>
+            <a href="[LINK_INSTA]" target="_blank" class="small-btn">INSTAGRAM</a>
+            <a href="#" class="small-btn" style="opacity: 0.5; cursor: default;">MATZE (CREATOR)</a> 
+        </div>
+    </div>
+
+    <div class="nav-dock">
+        <a href="gallery.html" class="small-btn" style="border-color: #00bcd4; color: #00bcd4;">> ARCHIVES (IMG)</a>
+        <a href="iudex.html" class="small-btn" style="border-color: #d4af37; color: #d4af37;">> PROJECT LUDEX</a>
+    </div>
+
+    <footer style="margin-bottom: 20px; font-size: 0.7rem; color: #555;">
+        <a href="impressum.html" style="color: #555; text-decoration: none;">Imprint & Privacy Policy</a>
+    </footer>
+
+</body>
+</html>

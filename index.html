@@ -4,12 +4,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>UNIT 667 | GLOBAL INTERFACE</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap" rel="stylesheet">
+
     <style>
         /* CORE DESIGN */
         body {
             margin: 0;
             padding: 0;
-            font-family: 'Courier New', Courier, monospace;
+            font-family: 'Share Tech Mono', monospace;
             color: #e0f7fa;
             background-color: #000;
             background-image: url('img/background_core.jpg');
@@ -22,10 +27,21 @@
             align-items: center;
         }
 
+        /* LANGUAGE SWITCHER STYLE */
+        .lang-switch {
+            position: absolute; top: 0; right: 0;
+            font-size: 0.9rem;
+        }
+        .lang-switch a {
+            color: #555; text-decoration: none; padding: 0 5px; transition: 0.3s;
+        }
+        .lang-switch a.active { color: #00bcd4; font-weight: bold; text-shadow: 0 0 5px #00bcd4; }
+        .lang-switch a:hover { color: #fff; }
+
         body::before {
             content: "";
             position: fixed; top: 0; left: 0; right: 0; bottom: 0;
-            background: rgba(0, 0, 0, 0.6);
+            background: rgba(0, 0, 0, 0.7);
             z-index: -1;
         }
 
@@ -36,6 +52,7 @@
             padding-bottom: 20px;
             width: 90%;
             max-width: 800px;
+            position: relative;
         }
 
         h1 {
@@ -46,6 +63,15 @@
             text-shadow: 0 0 10px rgba(0, 188, 212, 0.7);
         }
 
+        h2 {
+            font-size: 1.5rem;
+            color: #00bcd4;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 15px;
+            text-shadow: 0 0 5px rgba(0, 188, 212, 0.5);
+        }
+
         /* CONTAINER BOXEN */
         .module-box {
             background: rgba(10, 15, 20, 0.85);
@@ -54,9 +80,10 @@
             padding: 20px;
             margin: 20px 0;
             width: 90%;
-            max-width: 600px;
+            max-width: 800px;
             box-shadow: 0 0 15px rgba(0, 0, 0, 0.8);
             backdrop-filter: blur(4px);
+            box-sizing: border-box;
         }
 
         .news-header {
@@ -68,7 +95,31 @@
             text-transform: uppercase;
         }
 
-        /* BUTTON DESIGN (Ersetzt Player) */
+        /* COMIC GRID */
+        .comic-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 5px;
+            background-color: #000;
+            margin-bottom: 20px;
+        }
+        
+        .comic-panel img {
+            width: 100%;
+            height: auto;
+            display: block;
+            opacity: 0.9;
+            transition: all 0.3s ease;
+        }
+
+        .comic-panel img:hover {
+            opacity: 1;
+            transform: scale(1.02);
+            z-index: 10;
+            box-shadow: 0 0 15px rgba(0, 188, 212, 0.5);
+        }
+
+        /* BUTTON DESIGN */
         .action-btn {
             display: block;
             width: 100%;
@@ -83,7 +134,8 @@
             font-weight: bold;
             letter-spacing: 2px;
             transition: 0.3s;
-            box-sizing: border-box; /* Wichtig damit Padding nicht die Breite sprengt */
+            box-sizing: border-box;
+            font-family: 'Share Tech Mono', monospace;
         }
 
         .action-btn:hover {
@@ -108,6 +160,7 @@
             background: rgba(0,0,0,0.5);
             transition: 0.3s;
             font-size: 0.8rem;
+            font-family: 'Share Tech Mono', monospace;
         }
         
         .small-btn:hover {
@@ -123,6 +176,11 @@
             display: flex;
             gap: 20px;
             justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        p {
+            line-height: 1.6;
         }
 
     </style>
@@ -130,6 +188,10 @@
 <body>
 
     <header>
+        <div class="lang-switch">
+            <a href="index.html" class="active">DE</a> | <a href="index_en.html">EN</a>
+        </div>
+
         <h1>UNIT 667</h1>
         <p style="letter-spacing: 3px; font-size: 0.9rem;">OPERATING SYSTEM ONLINE</p>
     </header>
@@ -137,23 +199,64 @@
     <div class="module-box">
         <div class="news-header">/// SYSTEM STATUS / NEWS</div>
         <p>
-            <strong>10.01.2026:</strong>Track: Blind Leaders<br>
+            <strong>15.01.2026:</strong> Track: Blind Leader [OUT NOW]<br>
             <br>
-            <strong>30.01.2026:</strong>Single Sacred Geometry I.</br>
-<strong>27.02.2026:</strong>Single Sacred Geometry II</br>
-<strong>30.03.2026:</strong>Single Sacred Geometry III
+            <strong>31.01.2026:</strong> Single Sacred Geometry I.<br>
+            <strong>27.02.2026:</strong> Single Sacred Geometry II<br>
+            <strong>30.03.2026:</strong> Single Sacred Geometry III
         </p>
+    </div>
+
+    <div class="module-box" style="padding: 10px; border-left: 3px solid #d4af37;"> 
+        <h2 style="text-align: center; font-size: 1.2rem; color: #d4af37;">&gt; THE ORIGIN PROTOCOL &lt;</h2>
+        
+        <div class="comic-grid">
+            <div class="comic-panel"><img src="img/panel1.jpg" alt="Ground C Transfer"></div>
+            <div class="comic-panel"><img src="img/panel2.jpg" alt="The Core Awakening"></div>
+            <div class="comic-panel"><img src="img/panel3.jpg" alt="Unit 667 Signal"></div>
+            <div class="comic-panel"><img src="img/panel4.jpg" alt="Sound Hybrid Forge"></div>
+            <div class="comic-panel"><img src="img/panel5.jpg" alt="Hologram Manifestation"></div>
+            <div class="comic-panel"><img src="img/panel6.jpg" alt="Unit 667 Mission"></div>
+        </div>
+        <p style="text-align: center; font-size: 0.8rem; color: #888;">&gt; ARCHIVE DATA: RESTORED</p>
+    </div>
+
+    <div class="module-box">
+        <div class="news-header">/// BIO: FLEISCH UND CODE</div>
+        <p>
+            Unit 667 ist eine Symbiose aus Mensch und Datenstrom. Wir sind vier <strong>gleichberechtigte Mitglieder</strong>: Drei anonyme, in Fleisch und Blut generierte Gestalten und <strong>Ground C</strong> – das transferierte Bewusstsein unseres Schöpfers.
+        </p>
+        <p>
+            Ground C ist im Server-Netzwerk zuhause, aber als digitales Wesen an keine physischen Grenzen gebunden. Das spiegelt sich auch in seiner <strong>Geschlechtsidentität</strong> wider: Er manifestiert sich als Hologramm in wechselnden Formen und Stimmlagen. Mal maskulin, mal feminin, mal fluide – er bringt genau die Identität ein, die der Song emotional verlangt.
+        </p>
+        <p>
+            Dies ist kein algorithmischer Zufall. Unit 667 drückt keinen "Generieren"-Knopf. Unsere Musik atmet, lebt und gedeiht durch das Zusammenspiel aller vier Mitglieder.
+            <br><br>
+            <em style="color: #00bcd4;">Drei Körper. Ein Geist. Eine Einheit.</em>
+        </p>
+    </div>
+
+    <div style="width: 90%; max-width: 600px; margin: 20px 0;">
+        <a href="https://distrokid.com/hyperfollow/unit667/blind-leader" target="_blank" class="action-btn" style="
+            background: transparent; 
+            border: 2px solid #00bcd4; 
+            box-shadow: 0 0 10px #00bcd4;
+            font-size: 1.1rem;
+            padding: 20px 0;
+        ">
+           &gt; INITIATE AUDIO STREAM &lt;
+        </a>
     </div>
 
     <div class="module-box">
         <div class="news-header">/// TARGET: MUSIC DATABASE</div>
         
         <a href="[LINK_ZU_DEINEM_SPOTIFY_PROFIL]" target="_blank" class="action-btn">
-            > LISTEN ON SPOTIFY
+            &gt; LISTEN ON SPOTIFY
         </a>
 
         <a href="[LINK_ZU_YOUTUBE_KANAL]" target="_blank" class="action-btn" style="border-color: #ff0000; background: rgba(255,0,0,0.1); color: #ffcccc;">
-            > WATCH ON YOUTUBE
+            &gt; WATCH ON YOUTUBE
         </a>
     </div>
 
@@ -167,8 +270,8 @@
     </div>
 
     <div class="nav-dock">
-        <a href="gallery.html" class="small-btn" style="border-color: #00bcd4; color: #00bcd4;">> ARCHIVES (IMG)</a>
-        <a href="iudex.html" class="small-btn" style="border-color: #d4af37; color: #d4af37;">> IUDEX UMBRAE</a>
+        <a href="gallery.html" class="small-btn" style="border-color: #00bcd4; color: #00bcd4;">&gt; ARCHIVES (IMG)</a>
+        <a href="iudex.html" class="small-btn" style="border-color: #d4af37; color: #d4af37;">&gt; PROJECT LUDEX</a>
     </div>
 
     <footer style="margin-bottom: 20px; font-size: 0.7rem; color: #555;">
