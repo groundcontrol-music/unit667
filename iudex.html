@@ -1,4 +1,4 @@
-al<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="de">
 <head>
     <meta charset="UTF-8">
@@ -28,14 +28,19 @@ al<!DOCTYPE html>
             padding: 40px 20px;
         }
 
-        /* HERO IMAGE */
+        /* HERO IMAGE - ANGEPASST FÜR QUADRATISCHES PORTRÄT */
         .ludex-art {
-            width: 100%; max-width: 600px; height: auto; /* Etwas breiter für das Banner-Format */
+            width: 100%; 
+            max-width: 450px; /* Reduziert von 600px, damit das Quadrat nicht zu wuchtig wirkt */
+            height: auto; 
             border: 1px solid #5c4827;
             box-shadow: 0 0 30px rgba(197, 160, 89, 0.1);
             margin-bottom: 40px;
             /* Filter etwas reduziert, damit man dein Gesicht besser erkennt */
             filter: sepia(10%) contrast(105%); 
+            display: block; /* Wichtig fürs Zentrieren */
+            margin-left: auto; /* Zentriert das Bild */
+            margin-right: auto; /* Zentriert das Bild */
         }
 
         h1 {
@@ -247,5 +252,5 @@ al<!DOCTYPE html>
     </div>
 
 </body>
-
 </html>
+
