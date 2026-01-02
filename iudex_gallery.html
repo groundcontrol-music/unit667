@@ -7,8 +7,6 @@
     <style>
         body {
             background-color: #050300;
-            /* Falls das Banner als Hintergrund zu unruhig ist, 
-               nutze hier lieber eine Textur oder kommentiere die nächste Zeile aus: */
             background-image: url('img/background_gold.jpg'); 
             background-size: cover;
             background-position: center;
@@ -19,11 +17,10 @@
             text-align: center;
         }
 
-        /* Starkes Abdunkeln (Overlay), damit der Text lesbar bleibt */
         body::before {
             content: "";
             position: fixed; top: 0; left: 0; right: 0; bottom: 0;
-            background: rgba(10, 5, 0, 0.9); /* Etwas dunkler (0.9) für besseren Kontrast */
+            background: rgba(10, 5, 0, 0.9);
             z-index: -1;
         }
 
@@ -40,6 +37,8 @@
             grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
             gap: 20px;
             max-width: 900px; margin: 0 auto;
+            /* Wichtig: Damit das Grid abgeschlossen ist */
+            margin-bottom: 60px; 
         }
 
         .gallery-item {
@@ -47,7 +46,7 @@
             aspect-ratio: 1 / 1;
             border: 1px solid #3d301a;
             transition: 0.4s; cursor: pointer;
-            filter: sepia(40%) grayscale(20%); /* Antiker Look */
+            filter: sepia(40%) grayscale(20%);
         }
 
         .gallery-item:hover {
@@ -80,11 +79,18 @@
             font-size: 40px; color: #8c734b; cursor: pointer;
         }
 
+        /* FIX FÜR DEN BUTTON */
         .back-btn {
-            display: inline-block; margin-top: 50px; padding: 10px 20px;
+            display: inline-block; 
+            margin-top: 50px; padding: 10px 20px;
             border: 1px solid #3d301a; color: #888; text-decoration: none;
             font-family: 'Courier New', monospace; font-size: 0.8rem;
-            background: rgba(0,0,0,0.8); transition: 0.3s;
+            background: #050300; /* Solider Hintergrund, damit nichts durchscheint */
+            transition: 0.3s;
+            
+            /* NEU: Stellt sicher, dass der Button über allem liegt */
+            position: relative; 
+            z-index: 10; 
         }
         .back-btn:hover { border-color: #c5a059; color: #c5a059; }
 
@@ -95,12 +101,13 @@
     <h1>Visual Scriptures</h1>
 
     <div class="gallery-grid">
+        
         <div class="gallery-item" onclick="openLightbox('img/ludex_art1.jpg')">
             <img src="img/ludex_art1.jpg" alt="The Wanderer">
         </div>
-          <div class="gallery-grid">
+        
         <div class="gallery-item" onclick="openLightbox('img/real.jpg')">
-            <img src="img/ludex_art1.jpg" alt="Real">
+            <img src="img/real.jpg" alt="Real">
         </div>
         
         <div class="gallery-item" onclick="openLightbox('img/background_gold.jpg')">
@@ -110,9 +117,8 @@
         <div class="gallery-item" onclick="openLightbox('img/ludex_art2.jpg')">
             <img src="img/ludex_art2.jpg" alt="Ludex Umbrae Art">
         </div>
-    </div>
 
-    <a href="index.html" class="back-btn">< RETURN TO JUDGMENT</a>
+    </div> <a href="index.html" class="back-btn">< RETURN TO JUDGMENT</a>
 
     <div class="lightbox" id="lightbox" onclick="closeLightbox()">
         <span class="close-btn">×</span>
@@ -132,7 +138,6 @@
 </body>
 </html>
 
-</html>
 
 
 
