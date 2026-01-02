@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="de">
 <head>
@@ -8,8 +7,9 @@
     <style>
         body {
             background-color: #050300;
-            /* Das Bild mit den Rissen als Hintergrund */
-            background-image: url('img/ludex_banner.jpg');
+            /* Falls das Banner als Hintergrund zu unruhig ist, 
+               nutze hier lieber eine Textur oder kommentiere die nächste Zeile aus: */
+            background-image: url('img/ludex_banner.jpg'); 
             background-size: cover;
             background-position: center;
             background-attachment: fixed;
@@ -19,11 +19,11 @@
             text-align: center;
         }
 
-        /* Starkes Abdunkeln, damit die Risse nur subtil leuchten */
+        /* Starkes Abdunkeln (Overlay), damit der Text lesbar bleibt */
         body::before {
             content: "";
             position: fixed; top: 0; left: 0; right: 0; bottom: 0;
-            background: rgba(10, 5, 0, 0.85);
+            background: rgba(10, 5, 0, 0.9); /* Etwas dunkler (0.9) für besseren Kontrast */
             z-index: -1;
         }
 
@@ -100,15 +100,15 @@
         </div>
         
         <div class="gallery-item" onclick="openLightbox('img/background_gold.jpg')">
-            <img src="img/background_gold.jpg" alt="He is it">
+            <img src="img/background_gold.jpg" alt="Texture">
         </div>
 
         <div class="gallery-item" onclick="openLightbox('img/ludex_art2.jpg')">
-            <img src="img/ludex_art.2.jpg" alt="Ludex Umbrae">
+            <img src="img/ludex_art2.jpg" alt="Ludex Umbrae Art">
         </div>
     </div>
 
-    <a href="iudex.html" class="back-btn">< RETURN TO JUDGMENT</a>
+    <a href="index.html" class="back-btn">< RETURN TO JUDGMENT</a>
 
     <div class="lightbox" id="lightbox" onclick="closeLightbox()">
         <span class="close-btn">×</span>
@@ -126,6 +126,8 @@
     </script>
 
 </body>
+</html>
 
 </html>
+
 
