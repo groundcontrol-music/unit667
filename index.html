@@ -354,6 +354,57 @@
         <div class="social-grid">
            <a href="https://www.tiktok.com/@unit6676?_r=1&_t=ZG-92bQQng755E" target="_blank" class="small-btn">TIKTOK</a>
             <a href="https://instagram.com/unit_667?
+                <a href="https://instagram.com/unit_667?igsh=MW9zYXh4ZWI6dQ==" target="_blank" class="small-btn">INSTAGRAM</a>
+            <a href="#" class="small-btn" style="opacity: 0.5; cursor: default;">ERZIEHER MATZE</a> 
+        </div>
+    </div>
+
+    <div class="nav-dock">
+        <a href="gallery.html" class="small-btn" style="border-color: #00bcd4; color: #00bcd4;">&gt; ARCHIVES (IMG)</a>
+        <a href="iudex.html" class="small-btn" style="border-color: #d4af37; color: #d4af37;">&gt; PROJECT LUDEX</a>
+    </div>
+
+    <footer style="margin-bottom: 20px; font-size: 0.7rem; color: #555;">
+        <a href="impressum.html" style="color: #F8F8FF; text-decoration: none;">Impressum & Datenschutz</a>
+    </footer>
+
+    <script>
+        // CONFIGURATION
+        const SUPABASE_URL = "https://bjzffplvqshzmruizqxm.supabase.co"; 
+        
+        // Setup der Pfade für den öffentlichen Eimer 'music-preview'
+        const STORAGE_URL = `${SUPABASE_URL}/storage/v1/object/public/music-preview`;
+
+        // PRODUKT 1 DATEN
+        const product1 = {
+            image: "covertest.jpg",             
+            audio: "unit667blindleader.wav"     // Korrigierter Dateiname (klein, ohne Bindestrich)
+        };
+
+        // DOM Injection (Fügt die Links in das HTML ein)
+        const imgElement = document.getElementById('prod1-img');
+        const audioElement = document.getElementById('prod1-audio');
+
+        // Bild laden
+        if(imgElement) imgElement.src = `${STORAGE_URL}/${product1.image}`;
+        
+        // Audio laden
+        if(audioElement) {
+            audioElement.src = `${STORAGE_URL}/${product1.audio}`;
+            audioElement.parentElement.load(); // Player aktualisieren
+        }
+
+        // Falls wir kein Bild haben, setzen wir einen Platzhalter
+        if(imgElement) {
+            imgElement.onerror = function() {
+                this.style.display = 'none'; 
+            };
+        }
+    </script>
+
+</body>
+</html>
+
 
 
 
