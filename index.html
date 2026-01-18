@@ -368,7 +368,7 @@
         <a href="impressum.html" style="color: #F8F8FF; text-decoration: none;">Impressum & Datenschutz</a>
     </footer>
 
-    <script>
+<script>
         // CONFIGURATION
         const SUPABASE_URL = "https://bjzffplvqshzmruizqxm.supabase.co"; 
         
@@ -378,7 +378,7 @@
         // PRODUKT 1 DATEN
         const product1 = {
             image: "covertest.jpg",             
-            audio: "unit667blindleader.wav"     // Korrigierter Dateiname (klein, ohne Bindestrich)
+            audio: "unit667blindleader.mp3"     // JETZT .mp3
         };
 
         // DOM Injection (Fügt die Links in das HTML ein)
@@ -391,7 +391,7 @@
         // Audio laden
         if(audioElement) {
             audioElement.src = `${STORAGE_URL}/${product1.audio}`;
-            audioElement.parentElement.load(); // Player aktualisieren
+            audioElement.parentElement.load(); 
         }
 
         // Falls wir kein Bild haben, setzen wir einen Platzhalter
@@ -401,11 +401,3 @@
             };
         }
     </script>
-
-</body>
-</html>
-
-
-
-
-
