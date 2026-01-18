@@ -180,4 +180,224 @@
         }
 
         /* BUTTON DESIGN */
-        .
+        .action-btn {
+            display: block;
+            width: 100%;
+            padding: 15px 0;
+            margin-bottom: 10px;
+            text-align: center;
+            text-decoration: none;
+            color: #fff;
+            background: rgba(0, 188, 212, 0.1);
+            border: 1px solid #00bcd4;
+            text-transform: uppercase;
+            font-weight: bold;
+            letter-spacing: 2px;
+            transition: 0.3s;
+            box-sizing: border-box;
+            font-family: 'Share Tech Mono', monospace;
+        }
+
+        .action-btn:hover {
+            background: #00bcd4;
+            color: #000;
+            box-shadow: 0 0 15px #00bcd4;
+        }
+        
+        /* Shop Button Varianten */
+        .buy-btn {
+            border-color: #b388ff;
+            background: rgba(179, 136, 255, 0.1);
+            color: #e0f7fa;
+            padding: 10px 0;
+            font-size: 0.9rem;
+            cursor: pointer;
+        }
+        .buy-btn:hover {
+            background: #b388ff;
+            color: #000;
+            box-shadow: 0 0 15px #b388ff;
+        }
+
+        .social-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+        }
+
+        .small-btn {
+            display: block;
+            padding: 10px;
+            text-align: center;
+            text-decoration: none;
+            color: #aaa;
+            border: 1px solid #444;
+            background: rgba(0,0,0,0.5);
+            transition: 0.3s;
+            font-size: 0.8rem;
+            font-family: 'Share Tech Mono', monospace;
+        }
+        
+        .small-btn:hover {
+            border-color: #fff;
+            color: #fff;
+            background: #222;
+        }
+
+        /* NAVIGATION DOCK */
+        .nav-dock {
+            margin-top: 20px;
+            margin-bottom: 50px;
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        p {
+            line-height: 1.6;
+        }
+
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="lang-switch">
+            <a href="index.html" class="active">DE</a> | <a href="index_en.html">EN</a>
+        </div>
+
+        <h1>UNIT 667</h1>
+        <p style="letter-spacing: 3px; font-size: 0.9rem;">OPERATING SYSTEM ONLINE</p>
+    </header>
+
+    <div class="module-box">
+        <div class="news-header">/// BIO: FLEISCH UND CODE</div>
+        <p>
+            Unit 667 ist eine Symbiose aus Mensch und Datenstrom. Wir sind vier <strong>gleichberechtigte Mitglieder</strong>: Drei anonyme, in Fleisch und Blut generierte Gestalten und <strong>Ground C</strong> – das transferierte Bewusstsein unseres Schöpfers.
+        </p>
+        <p>
+            Ground C ist im Server-Netzwerk zuhause, aber als digitales Wesen an keine physischen Grenzen gebunden. Das spiegelt sich auch in seiner <strong>Geschlechtsidentität</strong> wider: Er manifestiert sich als Hologramm in wechselnden Formen und Stimmlagen. Mal maskulin, mal feminin, mal fluide – er bringt genau die Identität ein, die der Song emotional verlangt.
+        </p>
+        <p>
+            Dies ist kein algorithmischer Zufall. Unit 667 drückt keinen "Generieren"-Knopf. Unsere Musik atmet, lebt und gedeiht durch das Zusammenspiel aller vier Mitglieder.
+            <br><br>
+            <em style="color: #00bcd4;">Drei Körper. Ein Geist. Eine Einheit.</em>
+        </p>
+    </div>
+
+    <div class="module-box" style="padding: 10px; border-left: 3px solid #d4af37;"> 
+        <h2 style="text-align: center; font-size: 1.2rem; color: #d4af37;">&gt; THE ORIGIN PROTOCOL &lt;</h2>
+        
+        <div class="comic-grid">
+          <div class="comic-panel"><img src="img/groundtransfer.jpg" alt="Ground C Transfer"></div>
+            <div class="comic-panel"><img src="img/unit667hybridforge.jpg" alt="The Core Awakening"></div>
+            <div class="comic-panel"><img src="img/coreawakening.jpg" alt="Unit 667 Signal"></div>
+            <div class="comic-panel"><img src="img/hologramm.jpg" alt="Sound Hybrid Forge"></div>
+            <div class="comic-panel"><img src="img/unit667signal.jpg" alt="Hologram Manifestation"></div>
+            <div class="comic-panel"><img src="img/unit667mission.jpg" alt="Unit 667 Mission"></div>
+        </div>
+        <p style="text-align: center; font-size: 0.8rem; color: #888;">&gt; ARCHIVE DATA: RESTORED</p>
+    </div>
+
+    <div class="module-box">
+        <div class="news-header">/// SYSTEM STATUS / NEWS</div>
+        <p>
+            <strong>15.01.2026:</strong> Track: Blind Leader [OUT NOW]<br>
+            <br>
+            <strong>31.01.2026:</strong> Single Sacred Geometry I.<br>
+            <strong>27.02.2026:</strong> Single Sacred Geometry II<br>
+            <strong>30.03.2026:</strong> Single Sacred Geometry III
+        </p>
+    </div>
+
+    <div class="module-box shop-box">
+        <div class="shop-header">/// ACCESS DATA STORE [DOWNLOADS]</div>
+        
+        <div class="shop-grid">
+            
+            <div class="shop-item">
+                <img id="prod1-img" src="" alt="Loading..." class="shop-cover">
+                <div class="shop-title">BLIND LEADER</div>
+                <div class="shop-price">HQ WAV + MP3 /// 5.00 EUR</div>
+                
+                <audio controls>
+                    <source id="prod1-audio" src="" type="audio/mpeg">
+                    Browser Audio Error.
+                </audio>
+
+                <a href="https://buy.stripe.com/8x28wOgVW2fX8Be4l8aVa00" target="_blank" class="action-btn buy-btn">
+                    > ACQUIRE DATA <
+                </a>
+            </div>
+
+        </div>
+        <p style="text-align: center; font-size: 0.7rem; color: #666; margin-top: 10px;">
+            Secure Transaction via Stripe. Encrypted Download Link delivered immediately.
+        </p>
+    </div>
+
+    <div style="width: 90%; max-width: 600px; margin: 20px 0;">
+        <a href="https://distrokid.com/hyperfollow/unit667/blind-leader" target="_blank" class="action-btn" style="
+            background: transparent; 
+            border: 2px solid #00bcd4; 
+            box-shadow: 0 0 10px #00bcd4;
+            font-size: 1.1rem;
+            padding: 20px 0;
+        ">
+           &gt; INITIATE STREAMING &lt;
+        </a>
+    </div>
+
+    <div class="module-box">
+        <div class="news-header">/// COMM CHANNELS</div>
+        <div class="social-grid">
+           <a href="https://www.tiktok.com/@unit6676?_r=1&_t=ZG-92bQQng755E" target="_blank" class="small-btn">TIKTOK</a>
+            <a href="https://instagram.com/unit_667?igsh=MW9zYXh4ZWI6dQ==" target="_blank" class="small-btn">INSTAGRAM</a>
+            <a href="#" class="small-btn" style="opacity: 0.5; cursor: default;">ERZIEHER MATZE</a> 
+        </div>
+    </div>
+
+    <div class="nav-dock">
+        <a href="gallery.html" class="small-btn" style="border-color: #00bcd4; color: #00bcd4;">&gt; ARCHIVES (IMG)</a>
+        <a href="iudex.html" class="small-btn" style="border-color: #d4af37; color: #d4af37;">&gt; PROJECT LUDEX</a>
+    </div>
+
+    <footer style="margin-bottom: 20px; font-size: 0.7rem; color: #555;">
+        <a href="impressum.html" style="color: #F8F8FF; text-decoration: none;">Impressum & Datenschutz</a>
+    </footer>
+
+
+    <script>
+        // CONFIGURATION
+        const SUPABASE_URL = "https://bjzffplvqshzmruizqxm.supabase.co"; 
+        
+        // Setup der Pfade für den öffentlichen Eimer 'music-preview'
+        const STORAGE_URL = `${SUPABASE_URL}/storage/v1/object/public/music-preview`;
+
+        // PRODUKT 1 DATEN
+        const product1 = {
+            image: "covertest.jpg",             
+            audio: "unit667blindleader.mp3"     // Deine MP3 Datei
+        };
+
+        // DOM Injection
+        const imgElement = document.getElementById('prod1-img');
+        const audioElement = document.getElementById('prod1-audio');
+
+        if(imgElement) imgElement.src = `${STORAGE_URL}/${product1.image}`;
+        
+        if(audioElement) {
+            audioElement.src = `${STORAGE_URL}/${product1.audio}`;
+            audioElement.parentElement.load(); 
+        }
+
+        if(imgElement) {
+            imgElement.onerror = function() {
+                this.style.display = 'none'; 
+            };
+        }
+    </script>
+
+</body>
+</html>
