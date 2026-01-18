@@ -17,7 +17,7 @@
             font-family: 'Share Tech Mono', monospace;
             color: #e0f7fa;
             background-color: #000;
-            background-image: url('img/background_core.jpg');
+            background-image: url('img/background_core.jpg'); /* Falls Bild fehlt, ist es schwarz */
             background-size: cover;
             background-position: center center;
             background-attachment: fixed;
@@ -86,6 +86,16 @@
             box-sizing: border-box;
         }
 
+        /* SHOP SPEZIFISCH - VIOLETTER AKZENT FÜR SHOP */
+        .shop-box {
+            border-left: 3px solid #b388ff; 
+        }
+        .shop-header {
+            color: #b388ff;
+            border-bottom: 1px solid #444;
+            padding-bottom: 5px; margin-bottom: 15px; text-transform: uppercase; font-weight: bold;
+        }
+
         .news-header {
             font-weight: bold;
             color: #00bcd4;
@@ -119,6 +129,56 @@
             box-shadow: 0 0 15px rgba(0, 188, 212, 0.5);
         }
 
+        /* SHOP GRID */
+        .shop-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+            gap: 20px;
+        }
+
+        .shop-item {
+            background: rgba(0,0,0,0.6);
+            border: 1px solid #333;
+            padding: 15px;
+            display: flex;
+            flex-direction: column;
+            transition: 0.3s;
+        }
+        .shop-item:hover {
+            border-color: #b388ff;
+            box-shadow: 0 0 10px rgba(179, 136, 255, 0.2);
+        }
+
+        .shop-cover {
+            width: 100%;
+            aspect-ratio: 1/1;
+            object-fit: cover;
+            border: 1px solid #444;
+            margin-bottom: 10px;
+            background: #111; /* Platzhalter Farbe */
+        }
+
+        .shop-title {
+            font-size: 1.1rem;
+            color: #fff;
+            margin-bottom: 5px;
+        }
+        
+        .shop-price {
+            color: #b388ff;
+            font-size: 0.9rem;
+            margin-bottom: 10px;
+        }
+
+        /* Custom Audio Player Style (Basic) */
+        audio {
+            width: 100%;
+            height: 30px;
+            margin-bottom: 15px;
+            filter: invert(1) hue-rotate(180deg); /* Macht den Player dunkel/cyan */
+            opacity: 0.7;
+        }
+
         /* BUTTON DESIGN */
         .action-btn {
             display: block;
@@ -142,6 +202,21 @@
             background: #00bcd4;
             color: #000;
             box-shadow: 0 0 15px #00bcd4;
+        }
+        
+        /* Shop Button Varianten */
+        .buy-btn {
+            border-color: #b388ff;
+            background: rgba(179, 136, 255, 0.1);
+            color: #e0f7fa;
+            padding: 10px 0;
+            font-size: 0.9rem;
+            cursor: pointer;
+        }
+        .buy-btn:hover {
+            background: #b388ff;
+            color: #000;
+            box-shadow: 0 0 15px #b388ff;
         }
 
         .social-grid {
@@ -207,6 +282,31 @@
         </p>
     </div>
 
+    <div class="module-box shop-box">
+        <div class="shop-header">/// ACCESS DATA STORE [DOWNLOADS]</div>
+        
+        <div class="shop-grid">
+            
+            <div class="shop-item">
+                <img id="prod1-img" src="" alt="Loading..." class="shop-cover">
+                <div class="shop-title">BLIND LEADER</div>
+                <div class="shop-price">HQ WAV + MP3 /// 5.00 EUR</div>
+                
+                <audio controls>
+                    <source id="prod1-audio" src="" type="audio/mpeg">
+                    Browser Audio Error.
+                </audio>
+
+                <a href="https://buy.stripe.com/DEIN_STRIPE_LINK_HIER" target="_blank" class="action-btn buy-btn">
+                    > ACQUIRE DATA <
+                </a>
+            </div>
+
+            </div>
+        <p style="text-align: center; font-size: 0.7rem; color: #666; margin-top: 10px;">
+            Secure Transaction via Stripe. Encrypted Download Link delivered immediately.
+        </p>
+    </div>
     <div class="module-box" style="padding: 10px; border-left: 3px solid #d4af37;"> 
         <h2 style="text-align: center; font-size: 1.2rem; color: #d4af37;">&gt; THE ORIGIN PROTOCOL &lt;</h2>
         
@@ -244,19 +344,7 @@
             font-size: 1.1rem;
             padding: 20px 0;
         ">
-           &gt; INITIATE AUDIO STREAM &lt;
-        </a>
-    </div>
-
-    <div class="module-box">
-        <div class="news-header">/// TARGET: MUSIC DATABASE</div>
-        
-        <a href="[LINK_ZU_DEINEM_SPOTIFY_PROFIL]" target="_blank" class="action-btn">
-            &gt; LISTEN ON SPOTIFY
-        </a>
-
-        <a href="https://www.youtube.com/@unit667" target="_blank" class="action-btn" style="border-color: #ff0000; background: rgba(255,0,0,0.1); color: #ffcccc;">
-            &gt; WATCH ON YOUTUBE
+           &gt; INITIATE STREAMING &lt;
         </a>
     </div>
 
@@ -278,10 +366,34 @@
         <a href="impressum.html" style="color: #F8F8FF; text-decoration: none;">Impressum & Datenschutz</a>
     </footer>
 
+
+    <script>
+        // CONFIGURATION
+        // Hier trägst du deine Supabase Project URL ein (ohne https:// wenn möglich, oder einfach den Teil vor .supabase.co)
+        // Beispiel: https://xyzabc.supabase.co
+        const SUPABASE_URL = "https://DEINE_PROJEKT_ID.supabase.co"; 
+        
+        // Setup der Pfade für den öffentlichen Eimer 'music-preview'
+        const STORAGE_URL = `${SUPABASE_URL}/storage/v1/object/public/music-preview`;
+
+        // PRODUKT 1 DATEN (Hier Dateinamen aus Supabase eintragen)
+        const product1 = {
+            image: "cover_blindleader.jpg",      // Name der Bilddatei im Bucket
+            audio: "preview_blindleader.mp3"     // Name der MP3 im Bucket
+        };
+
+        // DOM Injection (Fügt die Links in das HTML ein)
+        document.getElementById('prod1-img').src = `${STORAGE_URL}/${product1.image}`;
+        document.getElementById('prod1-audio').src = `${STORAGE_URL}/${product1.audio}`;
+
+        // Falls wir kein Bild haben, setzen wir einen Platzhalter, damit es nicht kaputt aussieht
+        document.getElementById('prod1-img').onerror = function() {
+            this.style.display = 'none'; // Oder ein Fallback-Bild
+        };
+    </script>
+
 </body>
-
 </html>
-
 
 
 
